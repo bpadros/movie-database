@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 // import './App.css';
 import {Route,Routes} from 'react-router-dom'
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 import Header from './components/Header';
 import Listado from './components/Listado';
 import Detalle from './components/Detalle';
@@ -11,6 +11,9 @@ import 'bootstrap/dist/css/bootstrap.css'
 import {useEffect,useState} from 'react'
 import './css/app.css'
 import Favoritos from './components/Favoritos';
+import Tickets from './components/Tickets';
+// import Calendario from './components/calendar';
+// import Reviews from './components/Reviews';
 
 
 function App() {
@@ -77,8 +80,11 @@ function App() {
     {/* <Route exact  path='/listado' element={ (props) => <Listado addOrRemoveFromFavs={addOrRemoveFromFavs} {...props}/>}/> */}
     <Route exact  path='/listado' element={<Listado addOrRemoveFromFavs={addOrRemoveFromFavs}/>}/>
     <Route exact  path='/detalle' element={ <Detalle/>}/>
+   
+    <Route exact  path='/tickets' element={ <Tickets/>}/>
     <Route exact  path='/favoritos' element={ <Favoritos favorites={favorites} addOrRemoveFromFavs={addOrRemoveFromFavs}/>}/>
-    <Route exact  path='/resultados' element={ <Resultados/>}/>
+    <Route exact  path='/resultados' element={ <Resultados addOrRemoveFromFavs={addOrRemoveFromFavs}/>}/>
+    {/* <Route exact  path='/reviews' element={ <Reviews/>}/> */}
     </Routes>
   
     {/* <Footer></Footer> */}

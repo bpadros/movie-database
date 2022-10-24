@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios'
 import {useNavigate, Navigate} from 'react-router-dom'
 import swAlert from '@sweetalert/with-react'
+import '../css/login.css'
 
 function Login() {
 
@@ -37,7 +38,7 @@ function Login() {
         axios
         .post('http://challenge-react.alkemy.org', {email,password})
         .then(res =>{
-            swAlert(<h2>Perfecto, ingreaste correctamente</h2>)
+            swAlert(<h2>Perfecto, ingresaste correctamente</h2>)
             console.log(res.data)
             const tokenRecibido = res.data.token
             sessionStorage.setItem('token',tokenRecibido);
@@ -53,7 +54,8 @@ function Login() {
 
     return (
         <>
-         { token && <Navigate to='/listado' replace/> }
+        <div className='login-cont'>
+         {/* { token && <Navigate to='/listado' replace/> } */}
          {/* <Redirect to='/listado'/> */}
         <h2>Formulario de login</h2>
         <form onSubmit={submitHandler}>
@@ -68,9 +70,10 @@ function Login() {
         <input type='password' name='password'/>
             <br></br>
         </label>
-        <br></br>
-        <button type='submit'>INGRESAR</button>
+        <br></br> <br></br>
+        <button type='submit' className='btn-login'>INGRESAR</button>
         </form>
+        </div>
         </>
     );
 };

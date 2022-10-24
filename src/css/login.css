@@ -1,0 +1,16 @@
+.login-cont {
+    text-align: center;
+    margin-top: 100px;
+    color:aliceblue
+}
+
+input{
+    border-radius: 10px;
+    padding: 0 70px;
+}
+
+.btn-login{
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 8px;
+}

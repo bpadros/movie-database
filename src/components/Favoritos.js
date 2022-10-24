@@ -1,4 +1,5 @@
 import {useEffect,useState} from 'react'
+import {Link} from 'react-router-dom'
 
 
 function Favoritos (props) {
@@ -17,26 +18,26 @@ function Favoritos (props) {
 
     return (
         <>
-    <h2>Seccion favoritos</h2>
+    <h2 className='text-white'>Seccion favoritos</h2>
     <div className="row">
     {!props.favorites.length && <div className='col-12 text-danger'>No tenes nada en favoritos </div>}
     {/*Estrcutura base */}
     {
         props.favorites.map((oneMovie,idx)=>{
-            return <div className="col-3" key={idx}>
-        <div className="card my-4">
+            return <div className="col-4" key={idx}>
+        <div className="card my-4 text-white">
           <img src={oneMovie.imgURL} className="card-img-top" alt="..." />
           <button 
           className="favourite-btn"
           onClick={props.addOrRemoveFromFavs}
           data-movie-id={oneMovie.id}
-          >🖤</button>
-          <div className="card-body">
+          >🗑️</button>
+          <div className="card-body bg-black">
             <h5 className="card-title">{oneMovie.title}</h5>
             <p className="card-text">
              {oneMovie.overview.substring(0,100)}...
             </p>
-            {/* <Link to={`/detalle?movieID=${oneMovie.id}`} className="btn btn-primary">View detail</Link> */}
+            <Link to={`/detalle?movieID=${oneMovie.id}`} className="btn btn-primary">View detail</Link>
            </div>
         </div>
       </div>

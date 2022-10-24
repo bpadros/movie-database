@@ -4,6 +4,7 @@ import axios from 'axios'
 
 
 
+
 function Detalle (){
 
     let token = sessionStorage.getItem('token')
@@ -15,7 +16,7 @@ function Detalle (){
 
     useEffect(() => {
 
-        const endPoint = `https://api.themoviedb.org/3/movie/${movieID}?api_key=fc3574b333081974e005569591e1ac8c&language=es-ES`
+        const endPoint = `https://api.themoviedb.org/3/movie/${movieID}?api_key=fc3574b333081974e005569591e1ac8c&language=en-EN`
         axios.get(endPoint).then(response=>{
             const movieData = response.data
             console.log(movieData)
@@ -33,22 +34,29 @@ function Detalle (){
         {movie && 
 
         <> 
-        <h2>{movie.title}</h2>
+        <h1 className="col-8 text-white mb-4">{movie.title}</h1>
         <div className="row">
             <div className="col-4">
             <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} className="card-img-top" alt="movie poster" />
             </div>
-            <div className="col-8">
+            <div className="col-8 text-white text-center">
                
-                <h5>Fecha de estreno : {movie.release_date}</h5>
-                <h5>Reseña</h5>
+                <h5>Release date : {movie.release_date}</h5>
+                {/* <h5>Reseña</h5> */}
                 <p>{movie.overview}</p>
-                <h5>Rating. {movie.vote_average}</h5>
-                <h5>Generos</h5>
+                <h5>Rating: {movie.vote_average}</h5>
+                <h5>Genres:</h5>
                 <ul>
-                {movie.genres.map(oneGenre =>  <li key={oneGenre.id}>{oneGenre.name}</li>)}
+                {movie.genres.map(oneGenre =>  <li key={oneGenre.id}>-{oneGenre.name}</li>)}
                 </ul>
+
+                <Link to={`/tickets?ticket=${movie.id}`} className="btn btn-primary d-grid gap-2 p-2">BUY TICKETS</Link>
+
+                
+               
+               
             </div>
+           
         </div>
         </>
         }

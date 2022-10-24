@@ -3,7 +3,7 @@ import axios from 'axios'
 import {Link} from 'react-router-dom'
 import swAlert from '@sweetalert/with-react'
 
-function Resultados () {
+function Resultados (props) {
 
     let query = new URLSearchParams(window.location.search)
     let keyword = query.get('keyword')
@@ -26,7 +26,7 @@ function Resultados () {
 
     return (
         <>
-        <h2>Buscaste : <em> {keyword}</em></h2>
+        <h2 className='text-white'>Buscaste : <em> {keyword}</em></h2>
         {moviesResults.length === 0 && <h3>No hay resultados</h3>}
         <div className="row">
     {/*Estrcutura base */}
@@ -35,8 +35,13 @@ function Resultados () {
             return <div className="col-4" key={idx}>
            <div className="card my-4">
           <img src={`https://image.tmdb.org/t/p/w500/${oneMovie.poster_path}`} className="card-img-top" alt="..." />
-          <div className="card-body">
-            <h5 className="card-title">{oneMovie.title}</h5>
+          <div className="card-body bg-black align-items-center">
+            <h5 className="card-title text-white mb-2">{oneMovie.title}</h5>
+            {/* <button 
+          className="favourite-btn"
+          onClick={props.addOrRemoveFromFavs}
+          data-movie-id={oneMovie.id}
+          >🖤</button> */}
             {/* <p className="card-text">
              {oneMovie.overview.substring(0,100)}...
             </p> */}

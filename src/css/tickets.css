@@ -1,0 +1,76 @@
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+}
+
+
+
+
+
+input {
+   font-size: 25px;
+   padding: 0 50px;
+   text-align: center;
+   align-items: center;
+   background-color: darkslategray;
+   border: none;
+   color: yellow;
+   margin: 0 10px;
+   /* border: 1px solid white; */
+   
+}
+
+.input-title{
+    
+    background-color: black;
+    font-size: 40px;
+    color: red;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+
+}
+
+
+body{
+    color:white
+}
+
+span {
+    font-size: 40px;
+}
+
+select{
+    background-color: black;
+   border: none;
+    color: white;
+    font-size: 40px;
+    margin: 10px;
+}
+
+.form {
+    text-align: center;
+    margin-top : 50px
+}
+
+.entradas {
+    display: flex;
+   margin: 5px;
+}
+
+.btns {
+    border-radius: 50%;
+}
+
+#total-adultos,
+#total-chicos,
+#total-jubilados{
+    position: relative;
+    top: 5px;
+    font-size: 35px;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}

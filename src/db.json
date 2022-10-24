@@ -1,0 +1,20 @@
+{
+    "peliculas" : [
+        {
+            "id" : "238",
+            "nombre" : "el padrino",
+            "fecha" : "2022-9-12",
+            "horario" : "18:40",
+            "tickets" : 2,
+            "total-tickets" : 2000
+        },
+        {
+            "id" : "222",
+            "nombre" : "pulp fiction",
+            "fecha" : "2022-3-11",
+            "horario" : "18:40",
+            "tickets" : 3,
+            "total-tickets" : 3000
+        }
+    ]
+}

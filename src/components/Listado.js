@@ -21,7 +21,7 @@ let token = sessionStorage.getItem('token')
 const [moviesList, setMoviesList] = useState([])
 
 useEffect(() => {
-    const endPoint = 'https://api.themoviedb.org/3/discover/movie?api_key=fc3574b333081974e005569591e1ac8c&language=es-ES&page=1'
+    const endPoint = 'https://api.themoviedb.org/3/discover/movie?api_key=fc3574b333081974e005569591e1ac8c&language=en-EN&page=1'
     axios.get(endPoint)
     .then(response=>{
         const apiData = response.data
@@ -39,7 +39,7 @@ console.log(moviesList)
   return (
     <>
     { !token && <Navigate to='/' replace/> }
-
+    <h2 className="text-white">Now in theaters</h2>
     <div className="row">
     {/*Estrcutura base */}
     {
@@ -52,9 +52,9 @@ console.log(moviesList)
           onClick={props.addOrRemoveFromFavs}
           data-movie-id={oneMovie.id}
           >🖤</button>
-          <div className="card-body">
-            <h5 className="card-title">{oneMovie.title}</h5>
-            <p className="card-text">
+          <div className="card-body bg-black">
+            <h5 className="card-title text-white">{oneMovie.title}</h5>
+            <p className="card-text text-white">
              {oneMovie.overview.substring(0,100)}...
             </p>
             <Link to={`/detalle?movieID=${oneMovie.id}`} className="btn btn-primary">View detail</Link>
