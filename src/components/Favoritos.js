@@ -18,9 +18,9 @@ function Favoritos (props) {
 
     return (
         <>
-    <h2 className='text-white'>Seccion favoritos</h2>
+    <h2 className='text-white'>Favourites movies</h2>
     <div className="row">
-    {!props.favorites.length && <div className='col-12 text-danger'>No tenes nada en favoritos </div>}
+    {!props.favorites.length && <div className='col-12 text-danger'>You don't have any favourites movies yet </div>}
     {/*Estrcutura base */}
     {
         props.favorites.map((oneMovie,idx)=>{
