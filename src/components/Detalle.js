@@ -29,8 +29,8 @@ function Detalle (){
 
     return (
         <>
-        { !token && <Navigate to='/' replace/> }
-        {!movie && <p>Cargando...</p>}
+        {/* { !token && <Navigate to='/' replace/> } */}
+        {/* {!movie && <p>Cargando...</p>} */}
         {movie && 
 
         <> 
