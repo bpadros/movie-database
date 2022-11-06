@@ -39,7 +39,7 @@ console.log(moviesList)
   return (
     <>
     {/* { !token && <Navigate to='/' replace/> } */}
-    <h2 className="text-white">Now in theaters</h2>
+    <h2 className="text-white">Now in theaters...</h2>
     <div className="row">
     {/*Estrcutura base */}
     {
