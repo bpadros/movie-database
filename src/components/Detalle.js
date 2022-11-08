@@ -30,9 +30,9 @@ function Detalle (){
 
     return (
         <>
-        {/* { !token && <Navigate to='/' replace/> } */}
-        {/* {!movie && <p>Cargando...</p>} */}
-        {/* {movie &&  */}
+        {/* { !token && <Navigate to='/' replace/> }  */}
+        {!movie && <p>Cargando...</p>}
+        {movie &&  
 
         <> 
         <h1 className="col-8 text-white mb-4">{movie.title}</h1>
@@ -60,7 +60,7 @@ function Detalle (){
            
         </div>
         </>
-        // 
+         }
        
        
         </>
